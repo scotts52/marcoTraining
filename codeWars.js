@@ -285,3 +285,30 @@
 //   }
 
 // checking for a commit
+
+
+/* The Hashtag Generator */
+const str = "code" + " ".repeat(140) + "wars"
+
+function generateHashtag (str) {
+    let trimStr = str.trim()
+    if (!trimStr) return false;
+    let capStr = trimStr.split(' ')
+   
+    for (let i = 0; i < capStr.length; i++) {
+        if (capStr[i] !== ' ' || capStr[i] !== '')  
+        capStr[i] = capStr[i][0].toUpperCase() + capStr[i].substr(1);
+    }
+    console.log(capStr);
+
+    let hashWord =capStr.join('')
+
+    console.log(hashWord);
+
+    if (hashWord.length > 139) {
+    return false;
+    }
+    else return ('#' + hashWord);
+}
+
+console.log(generateHashtag(str));
